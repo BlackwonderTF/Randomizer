@@ -59,7 +59,7 @@ public void Event_PlayerInventoryUpdate(Event event, const char[] sName, bool bD
 		return;
 	
 	int iClient = GetClientOfUserId(event.GetInt("userid"));
-	if (TF2_GetClientTeam(iClient) <= TFTeam_Spectator)
+	if (0 < iClient <= MaxClients || TF2_GetClientTeam(iClient) <= TFTeam_Spectator)
 		return;
 	
 	//Refill charge meters
