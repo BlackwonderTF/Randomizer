@@ -184,7 +184,7 @@ stock bool TF2_GetItem(int iClient, int &iWeapon, int &iPos, bool bCosmetic = fa
 	//Loop though all weapons (non-wearables)
 	while (iPos < iMaxWeapons)
 	{
-		if(!HasEntProp(iClient, Prop_Send, "m_hMyWeapons", iPos))
+		if(!HasEntProp(iClient, Prop_Send, "m_hMyWeapons"))
 			return false;
 
 		iWeapon = GetEntPropEnt(iClient, Prop_Send, "m_hMyWeapons", iPos);
